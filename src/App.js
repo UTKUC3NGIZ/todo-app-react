@@ -3,6 +3,7 @@ import reducer from "./reducers/todoReducer";
 import "./assets/css/reset.css";
 import "./app.css";
 import deneme from "./assets/images/icon-moon.svg";
+import svgcarpi from "./assets/images/icon-cross.svg";
 function App() {
   const [state, dispatch] = useReducer(reducer, {
     todos: [],
@@ -51,8 +52,8 @@ function App() {
                 {" "}
                 <div className="todoInput">
                   <span className="todoInput__checkbox" type="checkbox"></span>
-
                   <span className="todoInput__text"> deneme</span>
+                  <img src={svgcarpi} alt="" className="todoInput__cross" />
                 </div>
               </li>
               <li>
@@ -61,6 +62,7 @@ function App() {
                   <span className="todoInput__checkbox" type="checkbox"></span>
 
                   <span className="todoInput__text"> deneme</span>
+                  <img src={svgcarpi} alt="" className="todoInput__cross" />
                 </div>
               </li>
               <li>
@@ -69,6 +71,7 @@ function App() {
                   <span className="todoInput__checkbox" type="checkbox"></span>
 
                   <span className="todoInput__text"> deneme</span>
+                  <img src={svgcarpi} alt="" className="todoInput__cross" />
                 </div>
               </li>
               <li>
@@ -77,6 +80,7 @@ function App() {
                   <span className="todoInput__checkbox" type="checkbox"></span>
 
                   <span className="todoInput__text"> deneme</span>
+                  <img src={svgcarpi} alt="" className="todoInput__cross" />
                 </div>
               </li>
               <li>
@@ -85,6 +89,7 @@ function App() {
                   <span className="todoInput__checkbox" type="checkbox"></span>
 
                   <span className="todoInput__text"> deneme</span>
+                  <img src={svgcarpi} alt="" className="todoInput__cross" />
                 </div>
               </li>
               <li>
@@ -93,6 +98,7 @@ function App() {
                   <span className="todoInput__checkbox" type="checkbox"></span>
 
                   <span className="todoInput__text"> deneme</span>
+                  <img src={svgcarpi} alt="" className="todoInput__cross" />
                 </div>
               </li>
             </ul>

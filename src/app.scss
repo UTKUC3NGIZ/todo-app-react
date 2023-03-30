@@ -101,10 +101,12 @@ button {
             padding: 1.167rem 0.556rem;
             border: none;
             font-size: 1rem;
-          }
-          ::placeholder {
             color: RGB(82, 84, 97);
             font-weight: 600;
+          }
+
+          &__cross {
+            display: none;
           }
         }
       }
@@ -169,12 +171,56 @@ button {
       width: 100%;
 
       .addTodo {
-
-        &__checkbox{
-          
+        &__checkbox {
         }
         &__text {
-          padding: 1.2rem 0.5rem;
+          padding: 1.35rem 0.5rem;
+          font-size: 12px;
+        }
+      }
+      .mainTodo {
+        ul {
+          li {
+            .todoInput {
+              align-items: center;
+              box-sizing: border-box;
+              padding: 0 22px;
+              &__text {
+                padding: 1.35rem 0.5rem;
+                font-size: 12px;
+
+              }
+              &__cross {
+                display: block;
+                width: 12px;
+                height: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .todoSetting {
+   > div {
+      position: relative;
+      padding: 20px 22px!important;
+
+      div {
+        box-sizing: border-box;
+        box-shadow: 0px 19px 32px 12px rgba(0, 0, 0, 0.089);
+        display: flex;
+        justify-content: center;
+        padding: 16px 22px;
+
+        background-color: #fff;
+        position: absolute;
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 70px;
+        button {
+          font-size: 1rem !important;
         }
       }
     }
