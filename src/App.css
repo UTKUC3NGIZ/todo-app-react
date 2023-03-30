@@ -36,6 +36,7 @@ button {
   box-shadow: 0px 19px 32px 12px rgba(0, 0, 0, 0.1); }
   .todoSection .addTodo {
     border: 1px solid RGB(236, 235, 238);
+    margin-bottom: 1.5rem;
     border-radius: 0.444rem;
     background-color: white;
     width: 100%;
@@ -59,7 +60,6 @@ button {
   .todoSection .mainTodo {
     width: 100%; }
     .todoSection .mainTodo ul {
-      margin-top: 1.5rem;
       width: 100%; }
       .todoSection .mainTodo ul li .todoInput {
         border-bottom: 1px solid RGB(236, 235, 238);
@@ -115,11 +115,16 @@ button {
 @media only screen and (min-width: 1440px) {
   html {
     font-size: 20px; } }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 16px;
+    background-size: auto; } }
+@media only screen and (max-width: 576px) {
   html {
     font-size: 14px;
     background: url(./assets/images/bg-mobile-light.jpg);
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    background-size: contain; }
 
   .mainDiv {
     position: static;
@@ -127,9 +132,12 @@ button {
     margin: 50px 25px 0 25px; }
     .mainDiv .todoSection {
       width: 100%; }
-      .mainDiv .todoSection .addTodo__text {
-        padding: 1.35rem 0.5rem;
-        font-size: 12px; }
+      .mainDiv .todoSection .addTodo {
+        padding: 0 22px;
+        box-sizing: border-box; }
+        .mainDiv .todoSection .addTodo__text {
+          padding: 1.35rem 0.5rem;
+          font-size: 12px; }
       .mainDiv .todoSection .mainTodo ul li .todoInput {
         align-items: center;
         box-sizing: border-box;
