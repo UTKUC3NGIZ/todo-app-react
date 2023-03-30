@@ -2,7 +2,7 @@
 html {
   background: url(./assets/images/bg-desktop-light.jpg);
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
   font-size: 18px;
   font-family: "Josefin Sans", sans-serif; }
 
@@ -20,11 +20,11 @@ button {
   .mainDiv .titleSection {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 35px; }
+    margin-bottom: 1.944rem; }
     .mainDiv .titleSection h1 {
       font-size: 2.2rem;
       color: white;
-      letter-spacing: 12px;
+      letter-spacing: 0.667rem;
       font-weight: 700; }
 
 .todoSection {
@@ -32,27 +32,27 @@ button {
   flex-direction: column;
   align-items: center;
   background-color: transparent;
-  width: 550px;
+  width: 30.556rem;
   box-shadow: 0px 19px 32px 12px rgba(0, 0, 0, 0.1); }
   .todoSection .addTodo {
     border: 1px solid RGB(236, 235, 238);
-    border-radius: 8px;
+    border-radius: 0.444rem;
     background-color: white;
     width: 100%;
     display: flex;
     justify-content: flex-end; }
     .todoSection .addTodo__checkbox {
-      width: 25px;
-      height: 25px;
+      width: 1.389rem;
+      height: 1.389rem;
       padding: 0;
       margin: 0;
-      border-radius: 15px;
-      border: 1px solid grey;
+      border-radius: 0.833rem;
+      border: 1px solid RGB(233, 232, 236);
       margin: auto; }
     .todoSection .addTodo__text {
       font-size: 1rem;
       width: 85%;
-      padding: 24px 10px;
+      padding: 1.333rem 0.556rem;
       border: none; }
     .todoSection .addTodo ::placeholder {
       color: RGB(167, 166, 170); }
@@ -68,17 +68,17 @@ button {
         display: flex;
         justify-content: flex-end; }
         .todoSection .mainTodo ul li .todoInput__checkbox {
-          width: 25px;
-          height: 25px;
+          width: 1.389rem;
+          height: 1.389rem;
           padding: 0;
           margin: 0;
-          border-radius: 15px;
+          border-radius: 0.833rem;
           border: 1px solid RGB(233, 232, 236);
           margin: auto; }
         .todoSection .mainTodo ul li .todoInput__text {
           border-radius: 0.2rem;
           width: 85%;
-          padding: 21px 10px;
+          padding: 1.167rem 0.556rem;
           border: none;
           font-size: 1rem; }
         .todoSection .mainTodo ul li .todoInput ::placeholder {
@@ -96,19 +96,37 @@ button {
         justify-content: space-between; }
         .todoSection .mainTodo .todoSetting > div p {
           color: RGB(152, 151, 156);
-          font-size: 14px;
+          font-size: 0.778rem;
           font-weight: 500; }
         .todoSection .mainTodo .todoSetting > div div button {
           color: RGB(152, 151, 156);
           border: none;
           background: transparent;
-          font-size: 14px;
+          font-size: 0.778rem;
           font-weight: 700; }
         .todoSection .mainTodo .todoSetting > div button {
           color: RGB(152, 151, 156);
           border: none;
           background: transparent;
-          font-size: 14px;
+          font-size: 0.778rem;
           font-weight: 500; }
+
+@media only screen and (min-width: 1440px) {
+  html {
+    font-size: 20px; } }
+@media only screen and (max-width: 375px) {
+  html {
+    font-size: 14px;
+    background: url(./assets/images/bg-mobile-light.jpg);
+    background-repeat: no-repeat; }
+
+  .mainDiv {
+    position: static;
+    transform: none;
+    margin: 50px 25px 0 25px; }
+    .mainDiv .todoSection {
+      width: 100%; }
+      .mainDiv .todoSection .addTodo__text {
+        padding: 1.2rem 0.5rem; } }
 
 /*# sourceMappingURL=app.css.map */

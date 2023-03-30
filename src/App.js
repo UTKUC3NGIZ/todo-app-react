@@ -52,11 +52,7 @@ function App() {
                 <div className="todoInput">
                   <span className="todoInput__checkbox" type="checkbox"></span>
 
-                  <input
-                    className="todoInput__text"
-                    type="text"
-                    placeholder="Create a new todo..."
-                  />
+                  <span className="todoInput__text"> deneme</span>
                 </div>
               </li>
               <li>
@@ -64,11 +60,7 @@ function App() {
                 <div className="todoInput">
                   <span className="todoInput__checkbox" type="checkbox"></span>
 
-                  <input
-                    className="todoInput__text"
-                    type="text"
-                    placeholder="Create a new todo..."
-                  />
+                  <span className="todoInput__text"> deneme</span>
                 </div>
               </li>
               <li>
@@ -76,11 +68,7 @@ function App() {
                 <div className="todoInput">
                   <span className="todoInput__checkbox" type="checkbox"></span>
 
-                  <input
-                    className="todoInput__text"
-                    type="text"
-                    placeholder="Create a new todo..."
-                  />
+                  <span className="todoInput__text"> deneme</span>
                 </div>
               </li>
               <li>
@@ -88,11 +76,7 @@ function App() {
                 <div className="todoInput">
                   <span className="todoInput__checkbox" type="checkbox"></span>
 
-                  <input
-                    className="todoInput__text"
-                    type="text"
-                    placeholder="Create a new todo..."
-                  />
+                  <span className="todoInput__text"> deneme</span>
                 </div>
               </li>
               <li>
@@ -100,11 +84,7 @@ function App() {
                 <div className="todoInput">
                   <span className="todoInput__checkbox" type="checkbox"></span>
 
-                  <input
-                    className="todoInput__text"
-                    type="text"
-                    placeholder="Create a new todo..."
-                  />
+                  <span className="todoInput__text"> deneme</span>
                 </div>
               </li>
               <li>
@@ -112,11 +92,7 @@ function App() {
                 <div className="todoInput">
                   <span className="todoInput__checkbox" type="checkbox"></span>
 
-                  <input
-                    className="todoInput__text"
-                    type="text"
-                    placeholder="Complete Todo App on Frontend Mentor"
-                  />
+                  <span className="todoInput__text"> deneme</span>
                 </div>
               </li>
             </ul>
