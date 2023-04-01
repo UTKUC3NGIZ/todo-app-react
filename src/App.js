@@ -37,70 +37,31 @@ function App() {
           </span>
         </div>
         <div className="todoSection">
-          <div className="addTodo">
+          <form className="addTodo" onSubmit={submitHandle}>
             <span className="addTodo__checkbox" type="checkbox"></span>
 
             <input
               className="addTodo__text"
               type="text"
               placeholder="Create a new todo..."
+              value={state.todo}
+              onChange={onChange}
             />
-          </div>
+          </form>
           <div className="mainTodo">
             <ul>
-              <li>
-                {" "}
-                <div className="todoInput">
-                  <span className="todoInput__checkbox" type="checkbox"></span>
-                  <span className="todoInput__text"> deneme</span>
-                  <img src={svgcarpi} alt="" className="todoInput__cross" />
-                </div>
-              </li>
-              <li>
-                {" "}
-                <div className="todoInput">
-                  <span className="todoInput__checkbox" type="checkbox"></span>
-
-                  <span className="todoInput__text"> deneme</span>
-                  <img src={svgcarpi} alt="" className="todoInput__cross" />
-                </div>
-              </li>
-              <li>
-                {" "}
-                <div className="todoInput">
-                  <span className="todoInput__checkbox" type="checkbox"></span>
-
-                  <span className="todoInput__text"> deneme</span>
-                  <img src={svgcarpi} alt="" className="todoInput__cross" />
-                </div>
-              </li>
-              <li>
-                {" "}
-                <div className="todoInput">
-                  <span className="todoInput__checkbox" type="checkbox"></span>
-
-                  <span className="todoInput__text"> deneme</span>
-                  <img src={svgcarpi} alt="" className="todoInput__cross" />
-                </div>
-              </li>
-              <li>
-                {" "}
-                <div className="todoInput">
-                  <span className="todoInput__checkbox" type="checkbox"></span>
-
-                  <span className="todoInput__text"> deneme</span>
-                  <img src={svgcarpi} alt="" className="todoInput__cross" />
-                </div>
-              </li>
-              <li>
-                {" "}
-                <div className="todoInput">
-                  <span className="todoInput__checkbox" type="checkbox"></span>
-
-                  <span className="todoInput__text"> deneme</span>
-                  <img src={svgcarpi} alt="" className="todoInput__cross" />
-                </div>
-              </li>
+              {state.todos.map((todo, index) => (
+                <li key={index}>
+                  <div className="todoInput">
+                    <span
+                      className="todoInput__checkbox"
+                      type="checkbox"
+                    ></span>
+                    <span className="todoInput__text"> {todo}</span>
+                    <img src={svgcarpi} alt="" className="todoInput__cross" />
+                  </div>
+                </li>
+              ))}
             </ul>
             <div className="todoSetting">
               <div>
