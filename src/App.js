@@ -1,29 +1,53 @@
-import React, { useReducer } from "react";
-import reducer from "./reducers/todoReducer";
 import "./assets/css/reset.css";
 import "./app.css";
-import deneme from "./assets/images/icon-moon.svg";
-import svgcarpi from "./assets/images/icon-cross.svg";
+import moon from "./assets/images/icon-moon.svg";
+import { useState } from "react";
 function App() {
-  const [state, dispatch] = useReducer(reducer, {
-    todos: [],
-    todo: "",
-  });
+  const [todos, setTodos] = useState([
+    { text: "todo 1", completed: true, id: 0 },
+    { text: "todo 2", completed: true, id: 1 },
+    { text: "todo 3", completed: false, id: 2 },
+    { text: "todo 4", completed: false, id: 3 },
+    { text: "todo 5", completed: false, id: 4 },
+  ]);
+  const [newTodo, setNewTodo] = useState("");
 
-  const submitHandle = (e) => {
+  function addTodo(e) {
     e.preventDefault();
-    dispatch({
-      type: "ADD_TODO",
-      todo: state.todo,
-    });
-  };
+    const newTodos = [
+      ...todos,
+      {
+        text: `${newTodo}`,
+        completed: false,
+        id: parseInt(`${todos.length}`),
+      },
+    ];
+    setTodos(newTodos);
+    setNewTodo("");
+  }
 
-  const onChange = (e) => {
-    dispatch({
-      type: "SET_TODO",
-      value: e.target.value,
-    });
-  };
+  const [filter, setFilter] = useState("all");
+
+  const filteredTodos =
+    filter === "completed"
+      ? todos.filter((todo) => todo.completed)
+      : filter === "active"
+      ? todos.filter((todo) => !todo.completed)
+      : todos;
+
+  function deleteTodo() {
+    setTodos(todos.filter((todo) => !todo.completed));
+  }
+
+  function changeTodo(index) {
+    const newTodos = [...todos];
+    if (newTodos[index].completed === false) {
+      newTodos[index].completed = true;
+    } else {
+      newTodos[index].completed = false;
+    }
+    setTodos(newTodos);
+  }
 
   return (
     <>
@@ -32,60 +56,63 @@ function App() {
           <h1>TODO</h1>
           <span>
             <a href="">
-              <img src={deneme} alt="" />
+              <img src={moon} alt="" />
             </a>
           </span>
         </div>
         <div className="todoSection">
-          <form className="addTodo" onSubmit={submitHandle}>
+          <form className="addTodo" onSubmit={addTodo}>
             <span className="addTodo__checkbox" type="checkbox"></span>
-
             <input
               className="addTodo__text"
               type="text"
               placeholder="Create a new todo..."
-              value={state.todo}
-              onChange={onChange}
+              onChange={(e) => setNewTodo(e.target.value)}
+              value={newTodo}
             />
           </form>
           <div className="mainTodo">
             <ul>
-              {state.todos.map((todo, index) => (
-                <li key={index}>
+              {filteredTodos.map((todo) => (
+                <li key={todo.id}>
                   <div className="todoInput">
                     <span
                       className="todoInput__checkbox"
                       type="checkbox"
+                      onClick={() => changeTodo(todo.id)}
                     ></span>
-                    <span className="todoInput__text"> {todo}</span>
-                    <img src={svgcarpi} alt="" className="todoInput__cross" />
+
+                    <span
+                      className="todoInput__text"
+                      style={{
+                        textDecoration: todo.completed ? "line-through" : "",
+                      }}
+                    >
+                      {todo.text}
+                    </span>
+                    <img alt="" className="todoInput__cross" />
                   </div>
                 </li>
               ))}
             </ul>
             <div className="todoSetting">
               <div>
-                <p>5 items left</p>
+                <p>
+                  {todos.filter((todo) => !todo.completed).length} items left
+                </p>
                 <div>
-                  <button>All</button>
-                  <button>Active</button>
-                  <button>Completed</button>
+                  <button onClick={() => setFilter("all")}>All</button>
+                  <button onClick={() => setFilter("active")}>Active</button>
+                  <button onClick={() => setFilter("completed")}>
+                    Completed
+                  </button>
                 </div>
-                <button>Clear Completed</button>
+                <button onClick={deleteTodo}>Clear Completed</button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* <form onSubmit={submitHandle}>
-        <input type="text" value={state.todo} onChange={onChange} />
-        <button disabled={!state.todo}>Ekle</button>
-      </form>
-      <ul>
-        {state.todos.map((todo, index) => (
-          <li key={index}>{todo}</li>
-        ))}
-      </ul> */}
     </>
   );
 }
