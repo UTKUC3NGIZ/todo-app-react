@@ -84,7 +84,8 @@ button {
           background-color: white;
           width: 100%;
           display: flex;
-          justify-content: flex-end;
+          justify-content: center;
+          align-items: center;
 
           &__checkbox {
             display: flex;
@@ -96,7 +97,6 @@ button {
             margin: 0;
             border-radius: 0.833rem;
             border: 1px solid RGB(233, 232, 236);
-            margin: auto;
           }
           &__text {
             border-radius: 0.2rem;
@@ -109,7 +109,17 @@ button {
           }
 
           &__cross {
-            display: none;
+            visibility: hidden;
+            opacity: 0;
+          }
+
+          &:hover {
+            .todoInput__cross {
+              visibility: visible;
+              opacity: 1;
+              width: 20px;
+              height: 20px;
+            }
           }
 
           .activeCheckButton {

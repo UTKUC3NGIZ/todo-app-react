@@ -2,6 +2,7 @@ import "./assets/css/reset.css";
 import "./app.css";
 import moon from "./assets/images/icon-moon.svg";
 import checkImg from "./assets/images/icon-check.svg";
+import crossImg from "./assets/images/icon-cross.svg";
 import { useState } from "react";
 function App() {
   const [todos, setTodos] = useState([
@@ -36,7 +37,7 @@ function App() {
       ? todos.filter((todo) => !todo.completed)
       : todos;
 
-  function deleteTodo() {
+  function deleteTodos() {
     setTodos(todos.filter((todo) => !todo.completed));
   }
 
@@ -50,6 +51,9 @@ function App() {
     setTodos(newTodos);
   }
 
+  function deleteTodo(index) {
+    setTodos(todos.filter((todo) => todo.id !== index));
+  }
 
   return (
     <>
@@ -90,14 +94,22 @@ function App() {
                     </span>
 
                     <span
-                      className={"todoInput__text " + (todo.completed ? "activeCheckText" : "")}
+                      className={
+                        "todoInput__text " +
+                        (todo.completed ? "activeCheckText" : "")
+                      }
                       style={{
                         textDecoration: todo.completed ? "line-through" : "",
                       }}
                     >
                       {todo.text}
                     </span>
-                    <img alt="" className="todoInput__cross" />
+                    <img
+                      src={crossImg}
+                      alt=""
+                      className="todoInput__cross"
+                      onClick={() => deleteTodo(todo.id)}
+                    />
                   </div>
                 </li>
               ))}
@@ -114,7 +126,7 @@ function App() {
                     Completed
                   </button>
                 </div>
-                <button onClick={deleteTodo}>Clear Completed</button>
+                <button onClick={deleteTodos}>Clear Completed</button>
               </div>
             </div>
           </div>
