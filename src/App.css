@@ -98,7 +98,7 @@ button {
           background-image: linear-gradient(to right bottom, #57ddff, #c058f3); }
         .todoSection .mainTodo ul li .todoInput .activeCheckText {
           text-decoration: line-through;
-          opacity: 0.3; }
+          color: #d2d3db; }
     .todoSection .mainTodo .todoSetting {
       width: 100%;
       background: white;
@@ -114,17 +114,25 @@ button {
           font-size: 0.778rem;
           font-weight: 500; }
         .todoSection .mainTodo .todoSetting > div div button {
-          color: RGB(152, 151, 156);
+          color: #9394a5;
           border: none;
           background: transparent;
           font-size: 0.778rem;
-          font-weight: 700; }
+          font-weight: 700;
+          cursor: pointer; }
+          .todoSection .mainTodo .todoSetting > div div button:hover {
+            color: #484b6a; }
+          .todoSection .mainTodo .todoSetting > div div button:nth-child(1) {
+            color: #3a7bfd; }
         .todoSection .mainTodo .todoSetting > div button {
           color: RGB(152, 151, 156);
           border: none;
           background: transparent;
           font-size: 0.778rem;
-          font-weight: 500; }
+          font-weight: 500;
+          cursor: pointer; }
+          .todoSection .mainTodo .todoSetting > div button:hover {
+            color: #484b6a; }
 
 @media only screen and (min-width: 1440px) {
   html {

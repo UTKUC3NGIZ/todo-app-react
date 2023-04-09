@@ -131,7 +131,7 @@ button {
           }
           .activeCheckText {
             text-decoration: line-through;
-            opacity: 0.3;
+            color: #d2d3db;
           }
         }
       }
@@ -155,11 +155,18 @@ button {
         }
         div {
           button {
-            color: RGB(152, 151, 156);
+            color: #9394a5;
             border: none;
             background: transparent;
             font-size: 0.778rem;
             font-weight: 700;
+            cursor: pointer;
+            &:hover {
+              color: #484b6a;
+            }
+            &:nth-child(1) {
+              color: #3a7bfd;
+            }
           }
         }
 
@@ -169,6 +176,10 @@ button {
           background: transparent;
           font-size: 0.778rem;
           font-weight: 500;
+          cursor: pointer;
+          &:hover {
+            color: #484b6a;
+          }
         }
       }
     }
