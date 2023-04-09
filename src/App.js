@@ -2,9 +2,10 @@ import "./assets/css/reset.css";
 import "./app.css";
 import "./assets/css/dark-mode.css";
 import moon from "./assets/images/icon-moon.svg";
+import sun from "./assets/images/icon-sun.svg";
 import checkImg from "./assets/images/icon-check.svg";
 import crossImg from "./assets/images/icon-cross.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 function App() {
   const [todos, setTodos] = useState([
     { text: "todo 1", completed: true, id: 0 },
@@ -57,22 +58,29 @@ function App() {
     setTodos(todos.filter((todo) => todo.id !== index));
   }
 
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  function toggleDarkMode() {
+    setIsDarkMode(!isDarkMode);
+  }
+
   return (
-    <>
+    <div className={"background " + (isDarkMode ? "backgroundDark" : "")}>
       <div className="mainDiv">
         <div className="titleSection">
           <h1>TODO</h1>
-          <span>
-            <a href="">
-              <img src={moon} alt="" />
-            </a>
+          <span onClick={toggleDarkMode}>
+            <img src={isDarkMode ? sun : moon} alt="" />
           </span>
         </div>
         <div className="todoSection">
-          <form className="addTodo" onSubmit={addTodo}>
+          <form
+            className={"addTodo " + (isDarkMode ? "dark" : "")}
+            onSubmit={addTodo}
+          >
             <span className="addTodo__checkbox" type="checkbox"></span>
             <input
-              className="addTodo__text"
+              className={"addTodo__text " + (isDarkMode ? "dark" : "")}
               type="text"
               placeholder="Create a new todo..."
               onChange={(e) => setNewTodo(e.target.value)}
@@ -83,11 +91,12 @@ function App() {
             <ul>
               {filteredTodos.map((todo) => (
                 <li key={todo.id}>
-                  <div className="todoInput">
+                  <div className={"todoInput " + (isDarkMode ? "dark" : "")}>
                     <span
                       className={
                         "todoInput__checkbox " +
-                        (todo.completed ? "activeCheckButton" : "")
+                        (todo.completed ? "activeCheckButton " : "") +
+                        (isDarkMode && !todo.completed ? "darkCheckBox" : "")
                       }
                       type="checkbox"
                       onClick={() => changeTodo(todo.id)}
@@ -98,7 +107,8 @@ function App() {
                     <span
                       className={
                         "todoInput__text " +
-                        (todo.completed ? "activeCheckText" : "")
+                        (todo.completed ? "activeCheckText " : "") +
+                        (isDarkMode ? "dark" : "")
                       }
                       style={{
                         textDecoration: todo.completed ? "line-through" : "",
@@ -116,8 +126,8 @@ function App() {
                 </li>
               ))}
             </ul>
-            <div className="todoSetting">
-              <div>
+            <div className={"todoSetting " + (isDarkMode ? "dark" : "")}>
+              <div className={isDarkMode ? "darkButton" : ""}>
                 <p>
                   {todos.filter((todo) => !todo.completed).length} items left
                 </p>
@@ -134,7 +144,7 @@ function App() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

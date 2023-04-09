@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAA,eAAgB;EACd,UAAU,EAAE,kCAAkC;EAC9C,gBAAgB,EAAE,kBAAkB;;AAGtC,KAAM;EACJ,gBAAgB,EAAE,kBAAmB;EACrC,YAAY,EAAE,kBAAkB;EAChC,KAAK,EAAE,kBAAmB;EAC1B,UAAK;IACH,YAAY,EAAE,kBAAkB;;AAIpC,gBAAiB;EACf,eAAe,EAAE,uBAAuB;EACxC,KAAK,EAAE,kBAAkB;;AAIzB;kBACO;EACL,KAAK,EAAE,kBAAkB;EAEzB;0BAAQ;IACN,KAAK,EAAE,kBAAkB;;AAM7B,mBAAQ;EACN,UAAU,EAAE,4GACmD;;AAInE,yCAA0C;EACxC,eAAgB;IACd,UAAU,EAAE,iCAAiC",
+"sources": ["dark-mode.scss"],
 "names": [],
 "file": "dark-mode.css"
 }

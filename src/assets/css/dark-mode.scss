@@ -1,0 +1,42 @@
+.backgroundDark {
+  background: url(../images/bg-desktop-dark.jpg);
+  background-color: #161722 !important;
+}
+
+.dark {
+  background-color: #25273c !important ;
+  border-color: #36364b !important;
+  color: #cacde8 !important ;
+  span {
+    border-color: #36364b !important;
+  }
+}
+
+.activeCheckText {
+  text-decoration: line-through !important;
+  color: #777a92 !important;
+}
+
+.darkButton {
+  p,
+  button {
+    color: #4d5066 !important;
+
+    &:hover {
+      color: #e4e5f1 !important;
+    }
+  }
+}
+
+.darkCheckBox {
+  &:hover {
+    background: linear-gradient(#25273c, #25273c) padding-box,
+      linear-gradient(to right bottom, #57ddff, #c058f3) !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .backgroundDark {
+    background: url(../images/bg-mobile-dark.jpg);
+  }
+}
