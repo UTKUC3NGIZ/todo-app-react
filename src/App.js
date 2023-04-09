@@ -1,6 +1,7 @@
 import "./assets/css/reset.css";
 import "./app.css";
 import moon from "./assets/images/icon-moon.svg";
+import checkImg from "./assets/images/icon-check.svg";
 import { useState } from "react";
 function App() {
   const [todos, setTodos] = useState([
@@ -49,6 +50,7 @@ function App() {
     setTodos(newTodos);
   }
 
+
   return (
     <>
       <div className="mainDiv">
@@ -77,13 +79,18 @@ function App() {
                 <li key={todo.id}>
                   <div className="todoInput">
                     <span
-                      className="todoInput__checkbox"
+                      className={
+                        "todoInput__checkbox " +
+                        (todo.completed ? "activeCheckButton" : "")
+                      }
                       type="checkbox"
                       onClick={() => changeTodo(todo.id)}
-                    ></span>
+                    >
+                      <img src={checkImg} alt="" />
+                    </span>
 
                     <span
-                      className="todoInput__text"
+                      className={"todoInput__text " + (todo.completed ? "activeCheckText" : "")}
                       style={{
                         textDecoration: todo.completed ? "line-through" : "",
                       }}

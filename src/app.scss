@@ -87,6 +87,9 @@ button {
           justify-content: flex-end;
 
           &__checkbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 1.389rem;
             height: 1.389rem;
             padding: 0;
@@ -107,6 +110,18 @@ button {
 
           &__cross {
             display: none;
+          }
+
+          .activeCheckButton {
+            background-image: linear-gradient(
+              to right bottom,
+              #57ddff,
+              #c058f3
+            );
+          }
+          .activeCheckText {
+            text-decoration: line-through;
+            opacity: 0.3;
           }
         }
       }
@@ -167,8 +182,7 @@ button {
     font-size: 14px;
     background: url(./assets/images/bg-mobile-light.jpg);
     background-repeat: no-repeat;
-        background-size: contain;
-
+    background-size: contain;
   }
 
   .mainDiv {

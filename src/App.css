@@ -68,6 +68,9 @@ button {
         display: flex;
         justify-content: flex-end; }
         .todoSection .mainTodo ul li .todoInput__checkbox {
+          display: flex;
+          justify-content: center;
+          align-items: center;
           width: 1.389rem;
           height: 1.389rem;
           padding: 0;
@@ -85,6 +88,11 @@ button {
           font-weight: 600; }
         .todoSection .mainTodo ul li .todoInput__cross {
           display: none; }
+        .todoSection .mainTodo ul li .todoInput .activeCheckButton {
+          background-image: linear-gradient(to right bottom, #57ddff, #c058f3); }
+        .todoSection .mainTodo ul li .todoInput .activeCheckText {
+          text-decoration: line-through;
+          opacity: 0.3; }
     .todoSection .mainTodo .todoSetting {
       width: 100%;
       background: white;
