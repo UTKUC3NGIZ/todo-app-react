@@ -1,5 +1,6 @@
 import "./assets/css/reset.css";
 import "./app.css";
+import "./assets/css/dark-mode.css";
 import moon from "./assets/images/icon-moon.svg";
 import checkImg from "./assets/images/icon-check.svg";
 import crossImg from "./assets/images/icon-cross.svg";
@@ -11,6 +12,7 @@ function App() {
     { text: "todo 3", completed: false, id: 2 },
     { text: "todo 4", completed: false, id: 3 },
     { text: "todo 5", completed: false, id: 4 },
+    { text: "todo 6", completed: false, id: 5 },
   ]);
   const [newTodo, setNewTodo] = useState("");
 

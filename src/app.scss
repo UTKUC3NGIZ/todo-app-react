@@ -24,7 +24,7 @@ button {
   .titleSection {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1.944rem;
+    margin-bottom: 2.3em;
 
     h1 {
       font-size: 2.2rem;
@@ -42,7 +42,7 @@ button {
   flex-direction: column;
   align-items: center;
   background-color: transparent;
-  width: 30.556rem;
+  width: 30rem;
 
   .addTodo {
     border: 1px solid RGB(236, 235, 238);
@@ -51,9 +51,11 @@ button {
     background-color: white;
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
     overflow: hidden;
     box-shadow: 0px 19px 32px 12px rgba(0, 0, 0, 0.1);
+    padding: 0 1rem;
+    box-sizing: border-box;
 
     &__checkbox {
       width: 1.389rem;
@@ -62,7 +64,7 @@ button {
       margin: 0;
       border-radius: 0.833rem;
       border: 1px solid RGB(233, 232, 236);
-      margin: auto;
+      margin-right: 1rem;
     }
     &__text {
       font-size: 1rem;
@@ -107,6 +109,8 @@ button {
             margin: 0;
             border-radius: 0.833rem;
             border: 1px solid RGB(233, 232, 236);
+            margin-right: 1rem;
+
           }
           &__text {
             border-radius: 0.2rem;
@@ -121,8 +125,8 @@ button {
           &__cross {
             visibility: hidden;
             opacity: 0;
-            width: 20px;
-            height: 20px;
+            width: 1rem;
+            height: 1rem;
           }
 
           &:hover {
@@ -196,7 +200,7 @@ button {
   }
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1441px) {
   html {
     font-size: 20px;
   }
