@@ -10,7 +10,7 @@ body,
   height: 100%;
 }
 .background {
-  background: url(./assets/images/bg-desktop-light.jpg);
+  background: url(../images/bg-desktop-light.jpg);
   background-repeat: no-repeat !important;
   background-size: contain !important;
   height: 100%;
@@ -244,16 +244,16 @@ button {
   }
   .background {
     background-size: contain !important;
-    background: url(./assets/images/bg-mobile-light.jpg);
+    background: url(../images/bg-mobile-light.jpg);
   }
 
   .mainDiv {
     position: static;
     transform: none;
-    padding: 50px 25px 0 25px;
+    padding: 50px 25px 0 25px; 
 
     .todoSection {
-      width: 100%;
+      width: 100%; 
 
       .addTodo {
         padding: 0 22px;

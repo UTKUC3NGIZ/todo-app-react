@@ -1,5 +1,5 @@
 import "./assets/css/reset.css";
-import "./app.css";
+import "./assets/css/app.css";
 import "./assets/css/dark-mode.css";
 import moon from "./assets/images/icon-moon.svg";
 import sun from "./assets/images/icon-sun.svg";
@@ -7,14 +7,7 @@ import checkImg from "./assets/images/icon-check.svg";
 import crossImg from "./assets/images/icon-cross.svg";
 import { useEffect, useState } from "react";
 function App() {
-  const [todos, setTodos] = useState([
-    { text: "todo 1", completed: true, id: 0 },
-    { text: "todo 2", completed: true, id: 1 },
-    { text: "todo 3", completed: false, id: 2 },
-    { text: "todo 4", completed: false, id: 3 },
-    { text: "todo 5", completed: false, id: 4 },
-    { text: "todo 6", completed: false, id: 5 },
-  ]);
+  const [todos, setTodos] = useState(JSON.parse(localStorage.getItem("todos")) || []);
   const [newTodo, setNewTodo] = useState("");
 
   function addTodo(e) {
@@ -63,6 +56,25 @@ function App() {
   function toggleDarkMode() {
     setIsDarkMode(!isDarkMode);
   }
+
+  useEffect(() => {
+    // const storedTodos = JSON.parse(localStorage.getItem("todos"));
+    // if (storedTodos) {
+    //   setTodos(storedTodos);
+    // }
+    const storedTheme = JSON.parse(localStorage.getItem("theme"));
+    if (storedTheme) {
+      setIsDarkMode(storedTheme);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
+  useEffect(() => {
+    localStorage.setItem("theme", JSON.stringify(isDarkMode));
+  }, [isDarkMode]);
 
   return (
     <div className={"background " + (isDarkMode ? "backgroundDark" : "")}>
