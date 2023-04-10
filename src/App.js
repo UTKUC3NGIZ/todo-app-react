@@ -7,20 +7,26 @@ import checkImg from "./assets/images/icon-check.svg";
 import crossImg from "./assets/images/icon-cross.svg";
 import { useEffect, useState } from "react";
 function App() {
-  const [todos, setTodos] = useState(JSON.parse(localStorage.getItem("todos")) || []);
+  const [todos, setTodos] = useState(
+    JSON.parse(localStorage.getItem("todos")) || []
+  );
   const [newTodo, setNewTodo] = useState("");
-
   function addTodo(e) {
     e.preventDefault();
-    const newTodos = [
-      ...todos,
-      {
-        text: `${newTodo}`,
-        completed: false,
-        id: parseInt(`${todos.length}`),
-      },
-    ];
-    setTodos(newTodos);
+    if (newTodo !== "") {
+      const newTodos = [
+        ...todos,
+        {
+          text: `${newTodo}`,
+          completed: false,
+          id: parseInt(`${todos.length}`),
+        },
+      ];
+      setTodos(newTodos);
+    } else {
+      console.log("hata");
+    }
+
     setNewTodo("");
   }
 
@@ -39,10 +45,11 @@ function App() {
 
   function changeTodo(index) {
     const newTodos = [...todos];
-    if (newTodos[index].completed === false) {
-      newTodos[index].completed = true;
+    const changeTodos = newTodos.filter((todo) => todo.id === index)[0];
+    if (changeTodos.completed === false) {
+      changeTodos.completed = true;
     } else {
-      newTodos[index].completed = false;
+      changeTodos.completed = false;
     }
     setTodos(newTodos);
   }
@@ -58,10 +65,6 @@ function App() {
   }
 
   useEffect(() => {
-    // const storedTodos = JSON.parse(localStorage.getItem("todos"));
-    // if (storedTodos) {
-    //   setTodos(storedTodos);
-    // }
     const storedTheme = JSON.parse(localStorage.getItem("theme"));
     if (storedTheme) {
       setIsDarkMode(storedTheme);
