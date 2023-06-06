@@ -6,7 +6,7 @@
 
 <h2>🚀 Demo</h2>
 
-[calculator-app-utkuc3ngiz.vercel.app](calculator-app-utkuc3ngiz.vercel.app)
+https://todo-app-react-self-eta.vercel.app/
 
 <h2>Project Screenshots:</h2>
 
